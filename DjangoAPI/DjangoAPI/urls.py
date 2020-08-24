@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse
+#from django.http import HttpResponse
+from MyApi.views import Home
 
 
 urlpatterns = [
