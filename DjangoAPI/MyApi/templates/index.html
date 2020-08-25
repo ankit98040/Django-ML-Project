@@ -16,9 +16,8 @@
             <div class="img-holder">
                 <div class="bg"></div>
                 <div class="info-holder">
-                    <h3>Get more things done with Loggin platform.</h3>
-                    <p>Access to the most powerfull tool in the entire design and web industry.</p>
-                    <img src="images/graphic.svg" alt="">
+                    <h3>Get more things done with your images.</h3>
+                    <img src="{% static 'images/graphic.svg' %}" alt="">
                 </div>
             </div>
             <div class="form-holder">
@@ -27,31 +26,43 @@
                         <div class="website-logo-inside">
                             <a href="">
                                 <div class="logo">
-                                    <p style="color: white;">TechSim+</p>
+                                    <p style="color: white; font-size: 30px"><b>Web-ML</b></p>
+                                    <p style="color: white; font-size: 14px; margin-top: -20px;">The art of learning</p>
                                 </div>
                             </a>
                         </div>
                         <div class="page-links">
-                            <a href=" " class="active">Login</a><a href="">Register</a>
+                            <a href=" " class="active">Play with images</a>
                         </div>
                         <form>
-                            <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
-                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <select class="form-control">
+                                <option>Choose Your Services</option>
+                                <option>Object Detection</option>
+                                <option>Face Analysis</option>
+                                <option>Celebrity Detection</option>
+
+                            </select><br>
+
+                            <input class="form-control" type="file" name="image" placeholder="Password" required>
                             <div class="form-button">
-                                <button id="submit" type="submit" class="ibtn">Login</button> <a href="">Forget password?</a>
+                                <button id="submit" type="submit" class="ibtn">PLAY</button>
                             </div>
                         </form>
-                        <div class="other-links">
-                            <span>Or login with</span><a href=" #">Facebook</a><a href=" #">Google</a><a href=" #">Linkedin</a>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+
+<script>
+    
+</script>
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
