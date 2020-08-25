@@ -17,7 +17,7 @@
                 <div class="bg"></div>
                 <div class="info-holder">
                     <h3>Get more things done with your images.</h3>
-                    <img src="{% static 'images/graphic.svg' %}" alt="">
+                    <img  id="outImage" src="{% static 'images/graphic.svg' %}" alt="">
                 </div>
             </div>
             <div class="form-holder">
@@ -43,7 +43,7 @@
 
                             </select><br>
 
-                            <input class="form-control" type="file" name="image" placeholder="Password" required>
+                            <input class="form-control" id="inputImage" type="file" onchange="ChangeImage(event)" name="image" placeholder="Password" required>
                             <div class="form-button">
                                 <button id="submit" type="submit" class="ibtn">PLAY</button>
                             </div>
@@ -56,7 +56,11 @@
     </div>
 
 <script>
-    
+    function ChangeImage(e){
+    var image = document.getElementById("outImage");
+    image.src = URL.createObjectURL(e.target.files[0]);
+        
+    }
 </script>
 
 
