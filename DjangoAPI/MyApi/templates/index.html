@@ -34,7 +34,7 @@
                         <div class="page-links">
                             <a href=" " class="active">Play with images</a>
                         </div>
-                        <form method="post">
+                        <form method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <select class="form-control">
                                 <option>Choose Your Services</option>
