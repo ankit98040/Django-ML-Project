@@ -34,7 +34,8 @@
                         <div class="page-links">
                             <a href=" " class="active">Play with images</a>
                         </div>
-                        <form>
+                        <form method="post">
+                            {% csrf_token %}
                             <select class="form-control">
                                 <option>Choose Your Services</option>
                                 <option>Object Detection</option>
