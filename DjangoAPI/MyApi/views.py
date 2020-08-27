@@ -70,7 +70,16 @@ def Home(request):
     if request.method=="POST":
         img = request.FILES["image"]
         service = request.POST["service"]
+
         data = MyFile.objects.create(image = img)
+        path = str(settings.MEDIA_ROOT + "/" + data.image.name )
+
+        if service=="Object Detection":
+            ObjectDetection(path)
+
+        if service=="Celebrity Detection":
+            Celebrities_Detection(path)
+
         url = "http:127.0.0.1:8000" + data.image.url
         return redirect(url)
     return render(request, "index.html")
