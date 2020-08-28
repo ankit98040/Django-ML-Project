@@ -6,6 +6,12 @@ import boto3
 import requests
 import cv2
 
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.decorators import api_view, renderer_classes
+from rest_framework.renderers import JSONRenderer
+
+
 
 def ObjectDetection(imagePath):
     session = boto3.Session(profile_name="default")
@@ -65,7 +71,8 @@ def Celebrities_Detection(imagePath):
 
 
 
-
+@api_view(["GET", "POST"])
+@renderer_classes([JSONRenderer])
 def Home(request):
     if request.method=="POST":
         img = request.FILES["image"]
@@ -81,5 +88,8 @@ def Home(request):
             Celebrities_Detection(path)
 
         url = "http:127.0.0.1:8000" + data.image.url
-        return redirect(url)
+        Msg = {"Url": url}
+        return Response(data=Msg, status=status.HTTP_200_OK)
     return render(request, "index.html")
+
+
